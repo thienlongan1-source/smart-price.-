@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Price Master - Bậc Thầy Săn Sale</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Thư viện Icon FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1><i class="fa-solid fa-bolt-lightning"></i> SMART PRICE MASTER</h1>
+            <p>Bộ lọc thông minh: Quét Giá Rẻ - Bán Chạy - Đánh Giá Cao</p>
+        </header>
+
+        <!-- Thanh tìm kiếm thông minh -->
+        <div class="search-box">
+            <input type="text" id="product-name" placeholder="Ví dụ: iPhone 15, Son 3CE, Sữa Ensure...">
+        </div>
+
+        <!-- Bộ lọc hành vi người mua -->
+        <div class="filter-options">
+            <p><i class="fa-solid fa-filter"></i> Bậc Thầy muốn ưu tiên điều gì?</p>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="priority" value="cheap" checked>
+                    <span><i class="fa-solid fa-arrow-down-1-9"></i> Giá Rẻ Nhất</span>
+                </label>
+                <label>
+                    <input type="radio" name="priority" value="sales">
+                    <span><i class="fa-solid fa-fire"></i> Bán Chạy (Nhiều người mua)</span>
+                </label>
+                <label>
+                    <input type="radio" name="priority" value="rating">
+                    <span><i class="fa-solid fa-star"></i> Uy Tín Cao (4-5 Sao)</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Nút kích hoạt -->
+        <div class="center-btn">
+            <button onclick="quetGiaNangCao()" id="btn-scan">
+                <i class="fa-solid fa-radar"></i> KÍCH HOẠT QUÉT TỰ ĐỘNG
+            </button>
+        </div>
+
+        <!-- Khu vực hiển thị kết quả (Ẩn đi lúc đầu, chỉ hiện khi có kết quả) -->
+        <div class="result-container" id="result-box">
+            <h3><i class="fa-solid fa-bullseye"></i> KẾT QUẢ ĐÃ TỐI ƯU CHO: <span id="search-keyword" class="highlight"></span></h3>
+            
+            <div class="grid-co-ban">
+                <!-- Thẻ Kết Quả Shopee -->
+                <div class="card shopee">
+                    <div class="card-header">
+                        <i class="fa-solid fa-bag-shopping"></i> SHOPEE
+                    </div>
+                    <p class="status" id="shopee-status">Đang phân tích dữ liệu...</p>
+                    <a href="#" id="link-shopee" target="_blank" class="btn-go">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Mở Shopee Ngay
+                    </a>
+                </div>
+
+                <!-- Thẻ Kết Quả Lazada -->
+                <div class="card lazada">
+                    <div class="card-header">
+                        <i class="fa-solid fa-shop"></i> LAZADA
+                    </div>
+                    <p class="status" id="lazada-status">Đang phân tích dữ liệu...</p>
+                    <a href="#" id="link-lazada" target="_blank" class="btn-go">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Mở Lazada Ngay
+                    </a>
+                </div>
+            </div>
+            
+            <div class="pro-tip">
+                <p><strong><i class="fa-solid fa-lightbulb"></i> Mẹo:</strong> Hệ thống đã tự động chèn mã Affiliate. Người dùng mua hàng qua link này, hoa hồng sẽ tự động chuyển về ví của bạn!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

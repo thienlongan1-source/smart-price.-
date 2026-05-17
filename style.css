@@ -1,0 +1,220 @@
+/* Khởi tạo biến màu sắc */
+:root {
+    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --text-main: #f8fafc;
+    --accent-color: #38bdf8;
+    --shopee-color: #f53d2d;
+    --lazada-color: #0f146d;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg-gradient);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px; /* Tối ưu cho hiển thị mobile/tablet */
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+header p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.search-box {
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    background: rgba(0, 0, 0, 0.25);
+    color: #fff;
+    font-size: 1.1rem;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.search-box input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.2);
+}
+
+.filter-options {
+    background: rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.filter-options p {
+    margin: 0 0 12px 0;
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    font-weight: 500;
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.radio-group label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease-in-out;
+    font-size: 0.95rem;
+}
+
+.radio-group input {
+    display: none;
+}
+
+.radio-group label:has(input:checked) {
+    border-color: var(--accent-color);
+    background: rgba(56, 189, 248, 0.1);
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.center-btn button {
+    width: 100%;
+    padding: 16px;
+    border-radius: 12px;
+    border: none;
+    background: var(--accent-color);
+    color: #0f172a;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+}
+
+.center-btn button:hover {
+    background: #7dd3fc;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(56, 189, 248, 0.3);
+}
+
+.result-container {
+    display: none; /* Ẩn đi lúc đầu bằng CSS */
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--border-color);
+}
+
+.result-container h3 {
+    font-size: 1rem;
+    text-align: center;
+    color: #94a3b8;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.grid-co-ban {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.card-header {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.shopee .card-header { color: var(--shopee-color); }
+.lazada .card-header { color: #3b82f6; }
+
+.status {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    margin-bottom: 20px;
+    min-height: 40px; /* Giữ khung không bị nhảy khi đổi text */
+}
+
+.btn-go {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #fff;
+    transition: all 0.2s;
+}
+
+.shopee .btn-go { background: var(--shopee-color); }
+.lazada .btn-go { background: var(--lazada-color); }
+
+.shopee .btn-go:hover { background: #d73222; }
+.lazada .btn-go:hover { background: #0a0d4a; }
+
+.pro-tip {
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    text-align: center;
+}
